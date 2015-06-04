@@ -36,18 +36,25 @@ git clone https://github.com/mtrdesign/cottoncart-api-php-client.git
 
 Or you can install the package manually by:
 
-- Copy <code>src/CottonCart.php</code> to your codebase, perhaps to the vendor directory.
-- Add the <code>CottonCart</code> class to your autoloader or require the file directly.
+- Copy <code>project</code> folder to your codebase, perhaps to the vendor directory.
+- Add the <code>project</code> folder to your autoloader or require the files directly.
 
 ## Basic Example ##
 ```php
 <?
   # Sample unauthenticated call
-  $api = new \CottonCart();
-  $store_info = $api->catalogue->store_info('cottoncart');
+  $api = new \CottonCart\CottonCart();
 
   # Add authentication
   $api->set_credentials($auth_id, $api_key);
+  
+  # Returns the full information about the requested store.
+  $store_info = $api->catalogue->store_info('cottoncart');
+  
+  # Return all stores that can be managed by the API client.
   $my_stores = $api->manage->my_stores();
+  
+  # Returns a list of stores with their essential properties.
+  $all_stores = $api->catalogue->stores(5);
 ?>
 ```
