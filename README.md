@@ -18,7 +18,7 @@ The recommended installation method is through <a href="http://getcomposer.org/"
 
 ```json
 "require": {
-  "mtrdesign/cottoncart-api-php-client": "*"
+  "mtrdesign/cottoncart-api-php-client": "dev-master"
 }
 ```  
 
@@ -43,7 +43,7 @@ Or you can install the package manually by:
 ```php
 <?
   # Sample unauthenticated call
-  $api = new CottonCart();
+  $api = new \CottonCart();
   $store_info = $api->catalogue->store_info('cottoncart');
 
   # Add authentication

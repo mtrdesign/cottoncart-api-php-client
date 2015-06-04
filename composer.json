@@ -2,12 +2,14 @@
   "name": "mtrdesign/cottoncart-api-php-client",
   "type": "library",
   "description": "The Cotton Cart API Client Library enables you to work with Cotton Cart APIs on your server. This library supports JSON an API output format.",
+	"keywords": ["cotton cart", "api client"],
   "homepage": "https://github.com/mtrdesign/cottoncart-api-php-client",
-  "autoload": {
-    "psr-4": {
-      "mtrdesign\\": "src/"
-    }
-  },
+	"license": "MIT",
+	"autoload" : {
+		"classmap" : [
+			"src/"
+		]
+	},
   "require": {
     "php": ">=5.3.2",
     "ext-curl": "*"
