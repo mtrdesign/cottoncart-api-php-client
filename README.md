@@ -36,7 +36,7 @@ git clone https://github.com/mtrdesign/cottoncart-api-php-client.git
 
 Or you can install the package manually by:
 
-- Copy <code>cottoncart.php</code> to your codebase, perhaps to the vendor directory.
+- Copy <code>src/CottonCart.php</code> to your codebase, perhaps to the vendor directory.
 - Add the <code>CottonCart</code> class to your autoloader or require the file directly.
 
 ## Basic Example ##
