@@ -36,8 +36,8 @@ git clone https://github.com/mtrdesign/cottoncart-api-php-client.git
 
 Or you can install the package manually by:
 
-- Copy <code>project</code> folder to your codebase, perhaps to the vendor directory.
-- Add the <code>project</code> folder to your autoloader or require the files directly.
+- Copy and rename <code>src</code> folder to your codebase, perhaps to the vendor directory.
+- Add the new folder to your autoloader or require the files directly.
 
 ## Basic Example ##
 ```php
@@ -51,7 +51,7 @@ Or you can install the package manually by:
   # Returns the full information about the requested store.
   $store_info = $api->catalogue->store_info('cottoncart');
   
-  # Return all stores that can be managed by the API client.
+  # Returns all stores that can be managed by the API client.
   $my_stores = $api->manage->my_stores();
   
   # Returns a list of stores with their essential properties.
