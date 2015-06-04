@@ -12,23 +12,32 @@ The Cotton Cart API Client Library enables you to work with Cotton Cart APIs on 
 
 ## Installation ##
 
-** 1. Using Composer **
+#### 1. Using Composer ####
 
-You can install the library by adding it as a dependency to your composer.json.
+The recommended installation method is through <a href="http://getcomposer.org/">Composer</a>, a dependency manager for PHP. Just add <code>mtrdesign/cottoncart-api-php-client</code> to your project's <code>composer.json</code> file:
 
 ```json
 "require": {
-  "google/apiclient": "1.0.*@beta"
+  "mtrdesign/cottoncart-api-php-client": "*"
 }
-```   
+```  
 
-** 2. Cloning from GitHub **
+and then run <code>composer install</code>. For further details you can find the package at <a href="https://packagist.org/packages/mtrdesign/cottoncart-api-php-client">Packagist</a>. 
+
+#### 2. Cloning from GitHub ####
 
 The library is available on GitHub. You can clone it into a local repository with the git clone command.
 
 ```sh
 git clone https://github.com/mtrdesign/cottoncart-api-php-client.git
 ```
+
+#### 3. Manual way  ####
+
+Or you can install the package manually by:
+
+- Copy <code>cottoncart.php</code> to your codebase, perhaps to the vendor directory.
+- Add the <code>CottonCart</code> class to your autoloader or require the file directly.
 
 ## Basic Example ##
 ```php
