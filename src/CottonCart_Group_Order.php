@@ -1,4 +1,7 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * Order API methods.
  */

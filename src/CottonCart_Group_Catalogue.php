@@ -1,4 +1,7 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * Catalogue API methods.
  */

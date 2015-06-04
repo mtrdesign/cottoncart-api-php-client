@@ -1,8 +1,11 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * Exception class.
  */
-class CottonCart_Exception extends Exception {
+class CottonCart_Exception extends \Exception {
 
 	/**
 	 * Error details.

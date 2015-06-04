@@ -1,4 +1,7 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * File upload wrapper class.
  */

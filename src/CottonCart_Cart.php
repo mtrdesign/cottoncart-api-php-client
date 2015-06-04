@@ -1,8 +1,11 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * Shopping cart class, holding the items for an order.
  */
-class CottonCart_Cart implements Countable {
+class CottonCart_Cart implements \Countable {
 
 	/**
 	 * Number of items in cart.

@@ -1,4 +1,7 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * API client class
  */
@@ -128,7 +131,7 @@ class CottonCart {
 		if (isset($instances[$group])) {
 			return $instances[$group];
 		}
-		$class = 'CottonCart_Group_'.$group;
+		$class = 'CottonCart\CottonCart_Group_'.$group;
 		if (!class_exists($class)) {
 			$details = array(
 				'group' => $group,

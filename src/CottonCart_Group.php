@@ -1,4 +1,7 @@
 <?php
+
+namespace CottonCart;
+
 /**
  * Abstract API method group class.
  */
