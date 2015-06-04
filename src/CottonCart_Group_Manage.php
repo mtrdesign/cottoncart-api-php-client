@@ -70,6 +70,7 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 	 * @param string $store_id			alphanumeric unique identifier for the store (required; new store will be http://$store_id.cottoncart.com)
 	 * @param string $name				name of the store (required)
 	 * @param string $description		description of the store (required)
+	 * @param boolean $hidden		if the store will be visible (required)
 	 * @param string|null $logo_file	path to image file to upload as store logo (optional)
 	 * @param string|null $website		URL of the store's website (optional, but see note below)
 	 * @param string|null $facebook_url	URL of the store's Facebook page (optional, but see note below)
@@ -79,11 +80,12 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 	 * @return array					API response
 	 * At least one of the $website, $facebook_url or $twitter_id parameters is required.
 	 */
-	public function create_store($store_id, $name, $description, $logo = null, $website = null, $facebook_url = null, $twitter_id = null, $rss_feed_url = null, $user_id = null) {
+	public function create_store($store_id, $name, $description, $hidden = false, $logo = null, $website = null, $facebook_url = null, $twitter_id = null, $rss_feed_url = null, $user_id = null) {
 		$params = array(
 			'store_id'		=> $store_id,
 			'name'			=> $name,
 			'description'	=> $description,
+			'hidden'	=> $hidden === true ? true : false,
 			'logo_file'		=> strlen($logo)? new CottonCart_File($logo): null,
 			'website'		=> $website,
 			'facebook_url'	=> $facebook_url,
@@ -91,6 +93,10 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 			'rss_feed_url'	=> $rss_feed_url,
 			'user_id'		=> $user_id,
 		);
+    /** We remove the hidden param if we don't want to hide the store from listings **/
+    if($params['hidden'] === false) {
+      unset($params['hidden']);
+    }
 		return $this->api->request('manage/create_store', $params, true);
 	}
 

@@ -111,7 +111,7 @@ class CottonCart {
 			if ($response['success']) {
 				return $response;
 			}
-			throw new CottonCart_Exception($response['error'], $response['errorCode'], $response['errorDetails']);
+			throw new CottonCart_Exception($response['error'], $response['errorCode'], @$response['errorDetails']);
 		}
 
 		$details = array(
