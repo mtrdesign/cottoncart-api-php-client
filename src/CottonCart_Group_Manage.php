@@ -69,8 +69,9 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 	 * wish to provide a $user_id parameter to assign the store to a sub-user account.
 	 * @param string $store_id			alphanumeric unique identifier for the store (required; new store will be http://$store_id.cottoncart.com)
 	 * @param string $name				name of the store (required)
+	 * @param string|null $embed_shop	prepare and create an embed store (optional, values: "yes" or "no")
 	 * @param string $description		description of the store (required)
-	 * @param boolean $hidden		if the store will be visible (required)
+	 * @param boolean $hidden		    if the store will be visible (required)
 	 * @param string|null $logo_file	path to image file to upload as store logo (optional)
 	 * @param string|null $website		URL of the store's website (optional, but see note below)
 	 * @param string|null $facebook_url	URL of the store's Facebook page (optional, but see note below)
@@ -80,13 +81,14 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 	 * @return array					API response
 	 * At least one of the $website, $facebook_url or $twitter_id parameters is required.
 	 */
-	public function create_store($store_id, $name, $description, $hidden = false, $logo = null, $website = null, $facebook_url = null, $twitter_id = null, $rss_feed_url = null, $user_id = null) {
+	public function create_store($store_id, $name, $description, $hidden = false, $logo = null, $embed_shop = null, $website = null, $facebook_url = null, $twitter_id = null, $rss_feed_url = null, $user_id = null) {
 		$params = array(
 			'store_id'		=> $store_id,
 			'name'			=> $name,
 			'description'	=> $description,
-			'hidden'	=> $hidden === true ? true : false,
+			'hidden'		=> $hidden === true ? true : false,
 			'logo_file'		=> strlen($logo)? new CottonCart_File($logo): null,
+			'embed_shop'	=> $embed_shop,
 			'website'		=> $website,
 			'facebook_url'	=> $facebook_url,
 			'twitter_id'	=> $twitter_id,
@@ -106,6 +108,7 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 	 * @param string|null $name			name of the store (optional)
 	 * @param string|null $description	description of the store (optional)
 	 * @param string|null $logo_file	path to image file to upload as store logo (optional)
+	 * @param string|null $embed_shop	prepare and create an embed store (optional, values: "yes" or "no")
 	 * @param string|null $website		URL of the store's website (optional, but see note below)
 	 * @param string|null $facebook_url	URL of the store's Facebook page (optional, but see note below)
 	 * @param string|null $twitter_id	twitter username (optional, but see note below)
@@ -118,11 +121,12 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 	 * but you may pass $website = '', $facebook_url = 'http://...' to clear the website and set a Facebook URL
 	 * in the same request.
 	 */
-	public function edit_store($store_id, $name, $description, $logo = null, $website = null, $facebook_url = null, $twitter_id = null, $rss_feed_url = null) {
+	public function edit_store($store_id, $name, $description, $logo = null, $embed_shop = null, $website = null, $facebook_url = null, $twitter_id = null, $rss_feed_url = null) {
 		$params = array(
 			'store_id'		=> $store_id,
 			'name'			=> $name,
 			'description'	=> $description,
+			'embed_shop'	=> $embed_shop,
 		);
 		$clearable_params = array(
 			'logo_file'		=> strlen($logo)? new CottonCart_File($logo): $logo,
@@ -166,6 +170,20 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 			'store_id' => $store_id,
 		);
 		return $this->api->request('manage/product_options', $params, true);
+	}
+
+	/**
+	 * Upload a new design.
+	 * @param string $store_id			alphanumeric ID of the store where the product will be added (required)
+	 * @param string $design			an image file to upload as new design (required)
+	 * @return array					API response
+	 */
+	public function upload_design($store_id, $design) {
+		$params = array(
+			'store_id'			=> $store_id,
+			'design_file'       => new CottonCart_File($design)
+		);
+		return $this->api->request('manage/upload_design', $params, true);
 	}
 
 	/**
@@ -230,6 +248,18 @@ class CottonCart_Group_Manage extends CottonCart_Group {
 			'product_id' => $product_id,
 		);
 		return $this->api->request('manage/delete_product', $params, true);
+	}
+
+	/**
+	 * Delete a product design.
+	 * @param int $design_id			numeric ID of the design (required)
+	 * @return array					API response
+	 */
+	public function delete_design($design_id) {
+		$params = array(
+			'design_id' => $design_id,
+		);
+		return $this->api->request('manage/delete_design', $params, true);
 	}
 
 }
