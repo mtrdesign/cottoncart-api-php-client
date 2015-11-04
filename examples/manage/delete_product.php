@@ -5,6 +5,7 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->delete_product(array(
+                # int numeric ID of the product (required)
                 'product_id' => PRODUCT_ID,
               ));
               
