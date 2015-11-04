@@ -10,9 +10,9 @@ try {
                 # string name for the product (required)
                 'name'            => PRODUCT_NAME,
                 # int|string numeric ID of an existing design, or image file to upload as new design 
-                # (required; if design_file is null)
+                # (required, if $design_file is null)
                 'design_id'       => null,
-                # string an image file to upload as new design (required; if design_id is null)
+                # string an image file to upload as new design (required, if $design_id is null)
                 'design_file'     => __DIR__ . DS . '..' . DS . 'logo-800x800.jpg',
                 # int|null numeric ID of the product type (optional; products of all types will be created if null)
                 'product_type_id' => 'all',
