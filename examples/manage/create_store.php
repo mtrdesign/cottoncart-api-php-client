@@ -5,13 +5,13 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->create_store(array(
-                'store_id'		 => 'test2233',
-                'name'		     => 'Test',
-                'description'	 => 'Test',
+                'store_id'		 => STORE_ID,
+                'name'		     => STORE_NAME,
+                'description'	 => STORE_DESCRIPTION,
                 'hidden'	     => null,
                 'logo_file' 	 => __DIR__ . DS . '..' . DS . 'logo-800x800.jpg',
                 'embed_shop'	 => null,
-                'website'	     => 'http://test.tld',
+                'website'	     => STORE_WEBSITE,
                 'facebook_url' => null,
                 'twitter_id'	 => null,
                 'rss_feed_url' => null,

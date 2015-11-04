@@ -5,7 +5,7 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->catalogue->product_info(array(
-                'product_id' => 306,
+                'product_id' => PRODUCT_ID,
                 'country'	   => null,
               ));
               

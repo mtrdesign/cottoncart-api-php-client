@@ -5,8 +5,8 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->create_user(array(
-                'email' => 'akolevu2td2@yahoo.com', 
-                'name' => 'Test', 
+                'email' => USER_EMAIL, 
+                'name' => USER_NAME, 
                 'password' => null,
               ));
               

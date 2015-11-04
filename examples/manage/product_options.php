@@ -5,7 +5,7 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->product_options(array(
-                'store_id' => 'test2233',
+                'store_id' => STORE_ID,
               ));
               
   debug($response);

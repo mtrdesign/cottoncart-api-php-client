@@ -5,8 +5,8 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->edit_product(array(
-                'product_id'      => 307,
-                'name'            => 'Test 1',
+                'product_id'      => PRODUCT_ID,
+                'name'            => PRODUCT_NAME,
                 'colours'         => array(),
                 'featured_colour' => null,
               ));

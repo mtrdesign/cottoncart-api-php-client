@@ -5,15 +5,15 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->order->calculate(array(
-                'country' => 'GB',
-                'item1_product_id' => 306,
-                'item1_colour_id' => 73000073,
-                'item1_size' => 'B640',
-                'item1_quantity' => 1,
-                'item2_product_id' => 306,
-                'item2_colour_id' => 73000073,
-                'item2_size' => 'B640',
-                'item2_quantity' => 1,
+                'country' => COUNTRY,
+                'item1_product_id' => ITEM1_PRODUCT_ID,
+                'item1_colour_id' => ITEM1_COLOUR_ID,
+                'item1_size' => ITEM1_SIZE,
+                'item1_quantity' => ITEM1_QUANTITY,
+                'item2_product_id' => ITEM2_PRODUCT_ID,
+                'item2_colour_id' => ITEM2_COLOUR_ID,
+                'item2_size' => ITEM2_SIZE,
+                'item2_quantity' => ITEM2_QUANTITY,
               ));  
               
   debug($response);

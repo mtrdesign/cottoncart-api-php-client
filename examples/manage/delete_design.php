@@ -5,7 +5,7 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->delete_design(array(
-                'design_id' => 4529,
+                'design_id' => DESIGN_ID,
               ));
               
   debug($response);

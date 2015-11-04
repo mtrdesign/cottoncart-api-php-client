@@ -5,7 +5,7 @@ include(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.
 try {
   
   $response = $api->manage->upload_design(array(
-                'store_id'    => 'test2233',
+                'store_id'    => STORE_ID,
                 'design_file' => __DIR__ . DS . '..' . DS . 'logo-800x800.jpg',
               ));
               
