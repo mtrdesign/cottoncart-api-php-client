@@ -39,22 +39,48 @@ Or you can install the package manually by:
 - Copy and rename <code>src</code> folder to your codebase, perhaps to the vendor directory.
 - Add the new folder to your autoloader or require the files directly.
 
-## Basic Example ##
-```php
-<?
-  # Sample unauthenticated call
-  $api = new \CottonCart\CottonCart();
+## Basic Examples ##
 
-  # Add authentication
-  $api->set_credentials($auth_id, $api_key);
-  
-  # Returns the full information about the requested store.
-  $store_info = $api->catalogue->store_info('cottoncart');
-  
-  # Returns all stores that can be managed by the API client.
-  $my_stores = $api->manage->my_stores();
-  
-  # Returns a list of stores with their essential properties.
-  $all_stores = $api->catalogue->stores(5);
-?>
-```
+#### 1. Manage calls ####
+
+[manage/create_product](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/create_product.php)
+
+[manage/create_store](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/create_store.php)
+
+[manage/create_user](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/create_user.php)
+
+[manage/delete_design](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/delete_design.php)
+
+[manage/delete_product](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/delete_product.php)
+
+[manage/delete_store](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/delete_store.php)
+
+[manage/edit_product](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/edit_product.php)
+
+[manage/edit_store](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/edit_store.php)
+
+[manage/my_stores](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/my_stores.php)
+
+[manage/my_users](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/my_users.php)
+
+[manage/product_options](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/product_options.php)
+
+[manage/store_options](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/store_options.php)
+
+[manage/upload_design](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/manage/upload_design.php)
+
+#### 2. Catalogue calls ####
+
+[catalogue/product_info](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/catalogue/product_info.php)
+
+[catalogue/store_info](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/catalogue/store_info.php)
+
+[catalogue/stores](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/catalogue/stores.php)
+
+#### 3. Order calls ####
+
+[order/product_info](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/order/calculate.php)
+
+[order/store_info](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/order/checkout.php)
+
+[order/stores](https://github.com/mtrdesign/cottoncart-api-php-client/tree/master/examples/order/test_checkout.php)

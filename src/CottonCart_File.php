@@ -3,7 +3,11 @@
 namespace CottonCart;
 
 /**
- * File upload wrapper class.
+ *
+ * Cotton Cart APIs Client Library for PHP
+ *
+ * https://github.com/mtrdesign/cottoncart-api-php-client
+ *
  */
 class CottonCart_File {
 
@@ -15,7 +19,12 @@ class CottonCart_File {
 
 	/**
 	 * Wrap a file in an instance.
-	 * @param string $path			path to the file to upload
+   *
+	 * @param string $path path to the file to upload
+   *
+   * @access public
+	 * @return void
+   *
 	 * @throws CottonCart_Excepiton	if file does not exist, or is not an actual file, or is unreadable
 	 */
 	public function __construct($path) {
@@ -39,6 +48,8 @@ class CottonCart_File {
 
 	/**
 	 * Get the path to the file to upload.
+   *
+   * @access public
 	 * @return string
 	 */
 	public function get_path() {
