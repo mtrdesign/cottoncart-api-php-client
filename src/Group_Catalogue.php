@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-class CottonCart_Group_Catalogue extends CottonCart_Group {
+class Group_Catalogue extends Group {
 
   /**
    * List all stores.

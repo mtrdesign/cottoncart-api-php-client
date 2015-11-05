@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-class CottonCart_Group_Manage extends CottonCart_Group {
+class Group_Manage extends Group {
 
   /**
    * List sub-users of the API account.
@@ -77,9 +77,9 @@ class CottonCart_Group_Manage extends CottonCart_Group {
     if(isset($func_params['hidden']) && $func_params['hidden'] === false) {
       unset($func_params['hidden']);
     }
-    # If a file is added we create for it an CottonCart_File instance
+    # If a file is added we create for it an File instance
     if(strlen($func_params['logo_file'])) {
-      $func_params['logo_file'] = new CottonCart_File($func_params['logo_file']);
+      $func_params['logo_file'] = new File($func_params['logo_file']);
     }
     return $this->api->request('manage/create_store', $func_params, true);
   }
@@ -104,9 +104,9 @@ class CottonCart_Group_Manage extends CottonCart_Group {
     if(isset($func_params['hidden']) && $func_params['hidden'] === false) {
       unset($func_params['hidden']);
     }
-    # If a file is added we create for it an CottonCart_File instance
+    # If a file is added we create for it an File instance
     if(strlen($func_params['logo_file'])) {
-      $func_params['logo_file'] = new CottonCart_File($func_params['logo_file']);
+      $func_params['logo_file'] = new File($func_params['logo_file']);
     }
     return $this->api->request('manage/edit_store', $func_params, true);
   }
@@ -144,9 +144,9 @@ class CottonCart_Group_Manage extends CottonCart_Group {
    * @return array API response
    */
   public function upload_design(array $func_params = array()) {
-    # If a file is added we create for it an CottonCart_File instance
+    # If a file is added we create for it an File instance
     if(strlen($func_params['design_file'])) {
-      $func_params['design_file'] = new CottonCart_File($func_params['design_file']);
+      $func_params['design_file'] = new File($func_params['design_file']);
     }
     return $this->api->request('manage/upload_design', $func_params, true);
   }
@@ -173,10 +173,10 @@ class CottonCart_Group_Manage extends CottonCart_Group {
     if(isset($func_params['colours']) && is_array($func_params['colours']) && $func_params['colours']) {
       $func_params['colours'] = join(',', $func_params['colours']);
     }
-    # If a file is added we create for it an CottonCart_File instance
+    # If a file is added we create for it an File instance
     # This is used when a design_id is not set
     if(isset($func_params['design_file']) && strlen($func_params['design_file'])) {
-      $func_params['design_file'] = new CottonCart_File($func_params['design_file']);
+      $func_params['design_file'] = new File($func_params['design_file']);
     }
     return $this->api->request('manage/create_product', $func_params, true);
   }

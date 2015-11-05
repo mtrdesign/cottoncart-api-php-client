@@ -9,13 +9,13 @@ define('DS', DIRECTORY_SEPARATOR);
 define('API_ID', API_ID);
 define('API_KEY', API_KEY);
 
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart.php');
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart_Exception.php');
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart_File.php');
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart_Group.php');
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart_Group_Catalogue.php');
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart_Group_Manage.php');
-include(__DIR__ . DS . '..' . DS . 'src' . DS . 'CottonCart_Group_Order.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'Client.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'Exception.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'File.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'Group.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'Group_Catalogue.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'Group_Manage.php');
+include(__DIR__ . DS . '..' . DS . 'src' . DS . 'Group_Order.php');
 
 function debug($output = null) {
   $output = json_decode($output, true);
@@ -25,6 +25,6 @@ function debug($output = null) {
   exit;
 }
 
-$api = new \CottonCart\CottonCart();
+$api = new \CottonCart\Client();
 
 $api->set_credentials(API_ID, API_KEY);

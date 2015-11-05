@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-class CottonCart {
+class Client {
 
   /**
    * Default API endpoint URL.
@@ -116,13 +116,13 @@ class CottonCart {
    * @access public
    * @return array
    *
-   * @throws CottonCart_Exception
+   * @throws Exception
    */
   public function request($method, array $params = array(), $signed = false) {
     $uploads = array();
     
     foreach($params as $name => $value) {
-      if ($value instanceof CottonCart_File) {
+      if ($value instanceof File) {
         $uploads[$name] = '@' . $value->get_path();
         unset($params[$name]);
       }
@@ -154,7 +154,7 @@ class CottonCart {
       if (isset($parsed_response['success']) && $parsed_response['success']) {
         return $response;
       }
-      throw new CottonCart_Exception(     
+      throw new Exception(     
                                       @$parsed_response['error'], 
                                       @$parsed_response['errorCode'], 
                                       @$parsed_response['errorDetails']
@@ -166,7 +166,7 @@ class CottonCart {
       'http_status' => $info['http_code'],
     );
     
-    throw new CottonCart_Exception('HTTP request failed', $details);
+    throw new Exception('HTTP request failed', $details);
   }
 
   /**
@@ -175,19 +175,19 @@ class CottonCart {
    * @param string $group API method group name
    *
    * @access public
-   * @return CottonCart_Group instance of the API method group
+   * @return Group instance of the API method group
    */
   public function __get($group) {
     static $instances = array();
     if (isset($instances[$group])) {
       return $instances[$group];
     }
-    $class = 'CottonCart\\CottonCart_Group_' . ucfirst($group);
+    $class = 'CottonCart\\Group_' . ucfirst($group);
     if (!class_exists($class)) {
       $details = array(
         'group' => $group,
       );
-      throw new CottonCart_Exception('Unsupported API method group', 400, $details);
+      throw new Exception('Unsupported API method group', 400, $details);
     }
     $instances[$group] = new $class($this);
     return $instances[$group];
@@ -208,7 +208,7 @@ class CottonCart {
         'method' => $method,
         'params' => $params,
       );
-      throw new CottonCart_Exception('API credentials not configured', 401, $details);
+      throw new Exception('API credentials not configured', 401, $details);
     }
     $params['auth_id'] = $this->auth_id;
     $params['auth_ts'] = time();

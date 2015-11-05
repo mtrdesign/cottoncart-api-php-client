@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-class CottonCart_Group_Order extends CottonCart_Group {
+class Group_Order extends Group {
 
   /**
    * Calculate prices, shipping fees and totals for an order.

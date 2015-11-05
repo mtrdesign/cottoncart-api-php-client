@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-class CottonCart_File {
+class File {
 
   /**
    * Path to the file to upload.
@@ -25,23 +25,23 @@ class CottonCart_File {
    * @access public
    * @return void
    *
-   * @throws CottonCart_Excepiton  if file does not exist, or is not an actual file, or is unreadable
+   * @throws Excepiton  if file does not exist, or is not an actual file, or is unreadable
    */
   public function __construct($path) {
     if (!strlen($path)) {
-      throw new CottonCart_Exception('Missing filename', 400);
+      throw new Exception('Missing filename', 400);
     }
     $details = array(
       'path' => $path,
     );
     if (!file_exists($path)) {
-      throw new CottonCart_Exception('File does not exist', 400, $details);
+      throw new Exception('File does not exist', 400, $details);
     }
     if (!is_file($path)) {
-      throw new CottonCart_Exception('Not a file', 400, $details);
+      throw new Exception('Not a file', 400, $details);
     }
     if (!is_readable($path)) {
-      throw new CottonCart_Exception('File is not readable', 400, $details);
+      throw new Exception('File is not readable', 400, $details);
     }
     $this->path = $path;
   }

@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-abstract class CottonCart_Group {
+abstract class Group {
 
   /**
    * CottonCart API client instance.
@@ -20,12 +20,12 @@ abstract class CottonCart_Group {
   /**
    * Instantiate the API method group.
    *
-   * @param CottonCart $api
+   * @param Client $api
    *
    * @access public
    * @return void
    */
-  public function __construct(CottonCart $api) {
+  public function __construct(Client $api) {
     $this->api = $api;
   }
 

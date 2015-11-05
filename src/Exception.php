@@ -9,7 +9,7 @@ namespace CottonCart;
  * https://github.com/mtrdesign/cottoncart-api-php-client
  *
  */
-class CottonCart_Exception extends \Exception {
+class Exception extends \Exception {
 
   /**
    * Error details.
