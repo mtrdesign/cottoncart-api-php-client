@@ -75,6 +75,6 @@ Or you can install the package manually by:
 
 #### 3. Order calls ####
 
-  * [order/product_info](examples/order/calculate.php)
-  * [order/store_info](examples/order/checkout.php)
-  * [order/stores](examples/order/test_checkout.php)
+  * [order/calculate](examples/order/calculate.php)
+  * [order/checkout](examples/order/checkout.php)
+  * [order/test_checkout](examples/order/test_checkout.php)
