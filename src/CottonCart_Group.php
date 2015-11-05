@@ -11,22 +11,22 @@ namespace CottonCart;
  */
 abstract class CottonCart_Group {
 
-	/**
-	 * CottonCart API client instance.
-	 * @var CottonCart
-	 */
-	protected $api;
+  /**
+   * CottonCart API client instance.
+   * @var CottonCart
+   */
+  protected $api;
 
-	/**
-	 * Instantiate the API method group.
+  /**
+   * Instantiate the API method group.
    *
-	 * @param CottonCart $api
+   * @param CottonCart $api
    *
    * @access public
-	 * @return void
-	 */
-	public function __construct(CottonCart $api) {
-		$this->api = $api;
-	}
+   * @return void
+   */
+  public function __construct(CottonCart $api) {
+    $this->api = $api;
+  }
 
 }

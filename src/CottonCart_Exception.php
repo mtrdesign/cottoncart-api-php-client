@@ -11,35 +11,35 @@ namespace CottonCart;
  */
 class CottonCart_Exception extends \Exception {
 
-	/**
-	 * Error details.
-	 * @var mixed
-	 */
-	protected $details;
+  /**
+   * Error details.
+   * @var mixed
+   */
+  protected $details;
 
-	/**
-	 * Construct a new exception.
+  /**
+   * Construct a new exception.
    *
-	 * @param string $error
-	 * @param int    $code
-	 * @param mixed  $details
+   * @param string $error
+   * @param int    $code
+   * @param mixed  $details
    *
    * @access public
-	 * @return void
-	 */
-	public function __construct($error, $code, $details) {
-		parent::__construct($error, $code);
-		$this->details = $details;
-	}
+   * @return void
+   */
+  public function __construct($error, $code, $details) {
+    parent::__construct($error, $code);
+    $this->details = $details;
+  }
 
-	/**
-	 * Return error details.
+  /**
+   * Return error details.
    *
    * @access public
-	 * @return mixed
-	 */
-	public function getDetails() {
-		return $this->details;
-	}
+   * @return mixed
+   */
+  public function getDetails() {
+    return $this->details;
+  }
 
 }
