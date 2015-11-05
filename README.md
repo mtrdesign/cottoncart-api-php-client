@@ -1,14 +1,24 @@
 # Cotton Cart APIs Client Library for PHP #
 
-## Description ##
-The Cotton Cart API Client Library enables you to work with Cotton Cart APIs on your server. This library supports JSON an API output format.
+## About ##
+The Cotton Cart API Client Library enables you to work with Cotton Cart APIs on your server. This library supports JSON and XML API output format.
+
+Feedback and bug reports are appreciated.
 
 ## Requirements ##
+To use this client, you will need:
+
   * [PHP 5.3.2 or higher](http://www.php.net/)
   * [PHP cURL extension](http://php.net/manual/en/book.curl.php)
+  * Composer dependency manager <http://getcomposer.org/download> (Optional, but recommended)
+  
+## Getting started ##
+You can get an API key by logging to your Cotton Cart account, and going to http://www.cottoncart.com/account/apikeys/.
 
-## Developer Documentation ##
-[http://www.cottoncart.com/apidoc/](http://www.cottoncart.com/apidoc/)
+If you encounter any problems, or if you have any questions please email [support@cottoncart.com](mailto:support@cottoncart.com).
+
+## Online Developer Documentation ##
+Preview the [documentation online] (http://www.cottoncart.com/apidoc/) at the Cotton Cart website.
 
 ## Installation ##
 
