@@ -112,6 +112,30 @@ class Group_Manage extends Group {
   }
 
   /**
+   * Set new prices for one or more product types for the selected shop
+   *
+   * @param array $func_params
+   *
+   * @access public
+   * @return array API response
+   */
+  public function edit_store_prices(array $func_params = array()) {
+    return $this->api->request('manage/edit_store_prices', $func_params, true);
+  }
+
+  /**
+   * Return all prices for all product types for the selected shop
+   *
+   * @param array $func_params
+   *
+   * @access public
+   * @return array API response
+   */
+  public function store_prices_options(array $func_params = array()) {
+    return $this->api->request('manage/store_prices_options', $func_params, true);
+  }
+
+  /**
    * Delete a store.
    *
    * @param array $func_params
