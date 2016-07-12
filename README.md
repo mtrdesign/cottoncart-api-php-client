@@ -152,8 +152,8 @@ Or you can install the package manually by:
   * [manage/delete_store](examples/manage/delete_store.php)
   * [manage/edit_product](examples/manage/edit_product.php)
   * [manage/edit_store](examples/manage/edit_store.php)
-  * [manage/edit_store_prices]
-  * [manage/store_prices_options]
+  * manage/edit_store_prices
+  * manage/store_prices_options
   * [manage/my_stores](examples/manage/my_stores.php)
   * [manage/my_users](examples/manage/my_users.php)
   * [manage/product_options](examples/manage/product_options.php)
