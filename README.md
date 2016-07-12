@@ -11,11 +11,11 @@ To use this client, you will need:
   * [PHP 5.3.2 or higher](http://www.php.net/)
   * [PHP cURL extension](http://php.net/manual/en/book.curl.php)
   * Composer dependency manager <http://getcomposer.org/download> (Optional, but recommended)
-  
+
 ## Getting started ##
 If you encounter any problems, or if you have any questions please email [support@cottoncart.com](mailto:support@cottoncart.com).
 
-#### General #### 
+#### General ####
 Cotton Cart uses a RESTFul API based at https://www.cottoncart.com/api/. Each API call has a corresponding URL. Each API URL follows the pattern:
 
 ```sh
@@ -34,7 +34,7 @@ Sample URLs:
 https://www.cottoncart.com/api/v1/catalogue/stores.xml
 https://www.cottoncart.com/api/v1/catalogue/stores.json
 
-#### Authenticated calls #### 
+#### Authenticated calls ####
 Certain API calls require authentication, while others are anonymous. Authenticated API calls must include auth_id, auth_ts and auth_sig parameters, discussed below. API calls without auth_id are anonymous, and even if they contain auth_ts and auth_sig, these parameters are not processed or verified.
 
 Each Cotton Cart user can create and delete multiple API Keys through the web interface. Each key has is a lowercase alphanumeric ID, appended with '@' to the store ID (e.g. 'user123@mystore'), and a shared secret value (16char, mixedcase alphanum). Authentication is performed based on the API Key and the corresponding shared secret.
@@ -59,7 +59,7 @@ To generate a valid request, the client needs to do the following:
 
 The above scheme allows secure, stateless communication between the server and the client.
 
-#### General response format #### 
+#### General response format ####
 
 ###### HTTP Codes ######
 
@@ -109,7 +109,7 @@ If a request asks for paginated response, the response will contain a pagination
   * prev_page - The starting index of the previous page.
   * next_page - The starting index of the next page.
 
-The start and count keys mirror the values from the request. total holds the total number of records available for listing, pages holds the number of available pages of count items per page, while prev_page and next_page hold the starting index of the previous and the next page respectively (a value to be used for the start request parameter, in order to display previous/next page). prev_page and next_page would be null if further navigation in the respective direction is not available. 
+The start and count keys mirror the values from the request. total holds the total number of records available for listing, pages holds the number of available pages of count items per page, while prev_page and next_page hold the starting index of the previous and the next page respectively (a value to be used for the start request parameter, in order to display previous/next page). prev_page and next_page would be null if further navigation in the respective direction is not available.
 
 ## Installation ##
 
@@ -121,9 +121,9 @@ The recommended installation method is through <a href="http://getcomposer.org/"
 "require": {
   "mtrdesign/cottoncart-api-php-client": "dev-master"
 }
-```  
+```
 
-and then run <code>composer install</code>. For further details you can find the package at <a href="https://packagist.org/packages/mtrdesign/cottoncart-api-php-client">Packagist</a>. 
+and then run <code>composer install</code>. For further details you can find the package at <a href="https://packagist.org/packages/mtrdesign/cottoncart-api-php-client">Packagist</a>.
 
 #### 2. Cloning from GitHub ####
 
