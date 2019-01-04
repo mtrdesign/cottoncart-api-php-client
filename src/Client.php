@@ -15,7 +15,7 @@ class Client {
    * Default API endpoint URL.
    * This parameter could be changed via `set_api_endpoint` method.
    */
-  const API_URL = 'http://www.cottoncart.com/api/v1/';
+  const API_URL = 'https://www.cottoncart.com/api/v1/';
   
   /**
    * Default API response format.
