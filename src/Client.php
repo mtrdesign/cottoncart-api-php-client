@@ -136,6 +136,7 @@ class Client {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     
     if (count($uploads)) {
+      curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
       curl_setopt($ch, CURLOPT_POST, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $uploads);
     }
